@@ -1,4 +1,4 @@
-from brax.envs import register_env
+from brax.envs import register_environment
 from unit_test_envs import *
 
 unit_envs = {
@@ -10,4 +10,4 @@ unit_envs = {
 }
 
 for name, env in unit_envs.items():
-    register_env(name, env)
+    register_environment(name, env)
