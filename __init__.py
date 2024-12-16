@@ -1,5 +1,5 @@
 from brax.envs import register_environment
-from unit_test_envs import *
+from .unit_test_envs import *
 
 unit_envs = {
     'first': FirstEnv,

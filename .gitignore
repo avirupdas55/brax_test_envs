@@ -1,0 +1,6 @@
+.idea
+*.pyc
+docker/display_init
+logs/*
+wandb/*
+job.sh.*

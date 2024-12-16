@@ -10,7 +10,7 @@ Observation = Union[jax.Array, Mapping[str, jax.Array]]
 ObservationSize = Union[int, Mapping[str, Union[Tuple[int, ...], int]]]
 
 @struct.dataclass
-class ExtendedState(State):
+class ExtendedState(base.Base):
     """State with an additional rng field."""
     pipeline_state: Optional[base.State]
     obs: Observation
@@ -60,7 +60,7 @@ class FirstEnv(PipelineEnv):
     def step(self, state: ExtendedState, action: jax.Array) -> ExtendedState:
         assert state.pipeline_state is not None
         self._step_count += 1
-        return state.replace(obs=jnp.array(0.0), reward=jnp.array(1.0))
+        return state.replace(obs=jnp.array([0.0]), reward=jnp.array(1.0))
     
     @property
     def observation_size(self):
